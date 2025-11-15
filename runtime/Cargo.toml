@@ -1,0 +1,142 @@
+[package]
+name = "r-oracle-runtime"
+version = "4.0.0"
+description = "R-Oracle: Resilient Multi-Source Oracle Chain Runtime"
+authors = ["R-Oracle Team"]
+edition = "2021"
+license = "Unlicense"
+repository = "https://github.com/LightLLM/R_Oracle"
+
+[package.metadata.docs.rs]
+targets = ["x86_64-unknown-linux-gnu"]
+
+[dependencies]
+codec = { package = "parity-scale-codec", version = "3.0.0", default-features = false, features = ["derive"] }
+scale-info = { version = "2.1.1", default-features = false, features = ["derive"] }
+serde = { package = "serde", version = "1.0.137", default-features = false, features = ["derive"] }
+
+# Substrate
+frame-benchmarking = { version = "4.0.0", default-features = false, optional = true }
+frame-executive = { version = "4.0.0", default-features = false }
+frame-support = { version = "4.0.0", default-features = false }
+frame-system = { version = "4.0.0", default-features = false }
+frame-system-benchmarking = { version = "4.0.0", default-features = false, optional = true }
+frame-system-rpc-runtime-api = { version = "4.0.0", default-features = false }
+frame-try-runtime = { version = "4.0.0", default-features = false, optional = true }
+pallet-aura = { version = "4.0.0", default-features = false }
+pallet-balances = { version = "4.0.0", default-features = false }
+pallet-collator-selection = { version = "4.0.0", default-features = false }
+pallet-session = { version = "4.0.0", default-features = false }
+pallet-timestamp = { version = "4.0.0", default-features = false }
+pallet-transaction-payment = { version = "4.0.0", default-features = false }
+pallet-transaction-payment-rpc-runtime-api = { version = "4.0.0", default-features = false }
+pallet-utility = { version = "4.0.0", default-features = false }
+pallet-sudo = { version = "4.0.0", default-features = false }
+pallet-roracle = { path = "../pallets/roracle", default-features = false }
+parachain-info = { version = "1.0.0", default-features = false }
+
+# Polkadot
+cumulus-pallet-parachain-system = { version = "1.0.0", default-features = false }
+cumulus-pallet-xcmp-queue = { version = "1.0.0", default-features = false }
+cumulus-primitives-core = { version = "1.0.0", default-features = false }
+cumulus-primitives-parachain-inherent = { version = "1.0.0", default-features = false }
+polkadot-parachain = { version = "1.0.0", default-features = false }
+polkadot-runtime-common = { version = "1.0.0", default-features = false }
+
+# XCM
+xcm = { version = "1.0.0", default-features = false }
+xcm-executor = { version = "1.0.0", default-features = false }
+xcm-builder = { version = "1.0.0", default-features = false }
+xcm-v3 = { version = "1.0.0", default-features = false }
+
+# Substrate
+sp-api = { version = "4.0.0", default-features = false }
+sp-block-builder = { version = "4.0.0", default-features = false }
+sp-consensus-aura = { version = "4.0.0", default-features = false }
+sp-core = { version = "4.0.0", default-features = false }
+sp-inherents = { version = "4.0.0", default-features = false }
+sp-offchain = { version = "4.0.0", default-features = false }
+sp-runtime = { version = "4.0.0", default-features = false }
+sp-session = { version = "4.0.0", default-features = false }
+sp-std = { version = "4.0.0", default-features = false }
+sp-transaction-pool = { version = "4.0.0", default-features = false }
+sp-version = { version = "4.0.0", default-features = false }
+
+[features]
+default = ["std"]
+std = [
+    "codec/std",
+    "scale-info/std",
+    "serde/std",
+    "frame-benchmarking?/std",
+    "frame-executive/std",
+    "frame-support/std",
+    "frame-system/std",
+    "frame-system-benchmarking?/std",
+    "frame-system-rpc-runtime-api/std",
+    "frame-try-runtime?/std",
+    "pallet-aura/std",
+    "pallet-balances/std",
+    "pallet-collator-selection/std",
+    "pallet-session/std",
+    "pallet-timestamp/std",
+    "pallet-transaction-payment/std",
+    "pallet-transaction-payment-rpc-runtime-api/std",
+    "pallet-utility/std",
+    "pallet-sudo/std",
+    "pallet-roracle/std",
+    "parachain-info/std",
+    "cumulus-pallet-parachain-system/std",
+    "cumulus-pallet-xcmp-queue/std",
+    "cumulus-primitives-core/std",
+    "cumulus-primitives-parachain-inherent/std",
+    "polkadot-parachain/std",
+    "polkadot-runtime-common/std",
+    "xcm/std",
+    "xcm-executor/std",
+    "xcm-builder/std",
+    "xcm-v3/std",
+    "sp-api/std",
+    "sp-block-builder/std",
+    "sp-consensus-aura/std",
+    "sp-core/std",
+    "sp-inherents/std",
+    "sp-offchain/std",
+    "sp-runtime/std",
+    "sp-session/std",
+    "sp-std/std",
+    "sp-transaction-pool/std",
+    "sp-version/std",
+]
+runtime-benchmarks = [
+    "frame-benchmarking/runtime-benchmarks",
+    "frame-support/runtime-benchmarks",
+    "frame-system/runtime-benchmarks",
+    "frame-system-benchmarking/runtime-benchmarks",
+    "pallet-aura/runtime-benchmarks",
+    "pallet-balances/runtime-benchmarks",
+    "pallet-collator-selection/runtime-benchmarks",
+    "pallet-session/runtime-benchmarks",
+    "pallet-timestamp/runtime-benchmarks",
+    "pallet-transaction-payment/runtime-benchmarks",
+    "pallet-utility/runtime-benchmarks",
+    "pallet-roracle/runtime-benchmarks",
+]
+try-runtime = [
+    "frame-executive/try-runtime",
+    "frame-support/try-runtime",
+    "frame-system/try-runtime",
+    "frame-try-runtime",
+    "pallet-aura/try-runtime",
+    "pallet-balances/try-runtime",
+    "pallet-collator-selection/try-runtime",
+    "pallet-session/try-runtime",
+    "pallet-timestamp/try-runtime",
+    "pallet-transaction-payment/try-runtime",
+    "pallet-utility/try-runtime",
+    "pallet-roracle/try-runtime",
+]
+
+[build-dependencies]
+substrate-wasm-builder = { version = "4.0.0", default-features = false }
+

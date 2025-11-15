@@ -1,0 +1,44 @@
+# Rust
+/target
+**/*.rs.bk
+Cargo.lock
+
+# Node
+node_modules/
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/.env*.local
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+*.wasm
+chain-specs/*.json
+!chain-specs/.gitkeep
+
+# Logs
+*.log
+
+# GitHub
+.github/workflows/*.yml.bak
+
+# Test coverage
+coverage/
+*.lcov
+frontend/coverage/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
