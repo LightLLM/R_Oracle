@@ -1,0 +1,147 @@
+[workspace]
+members = [
+    "node",
+    "runtime",
+    "pallets/roracle",
+]
+resolver = "2"
+
+[workspace.package]
+version = "4.0.0"
+authors = ["R-Oracle Team"]
+edition = "2021"
+license = "Unlicense"
+repository = "https://github.com/LightLLM/R_Oracle"
+
+[workspace.dependencies]
+# Substrate
+sp-api = { version = "4.0.0", default-features = false }
+sp-block-builder = { version = "4.0.0", default-features = false }
+sp-blockchain = { version = "4.0.0", default-features = false }
+sp-consensus-aura = { version = "4.0.0", default-features = false }
+sp-core = { version = "4.0.0", default-features = false }
+sp-inherents = { version = "4.0.0", default-features = false }
+sp-offchain = { version = "4.0.0", default-features = false }
+sp-runtime = { version = "4.0.0", default-features = false }
+sp-session = { version = "4.0.0", default-features = false }
+sp-std = { version = "4.0.0", default-features = false }
+sp-transaction-pool = { version = "4.0.0", default-features = false }
+sp-version = { version = "4.0.0", default-features = false }
+pallet-aura = { version = "4.0.0", default-features = false }
+pallet-balances = { version = "4.0.0", default-features = false }
+pallet-collator-selection = { version = "4.0.0", default-features = false }
+pallet-contracts = { version = "4.0.0", default-features = false }
+pallet-multisig = { version = "4.0.0", default-features = false }
+pallet-proxy = { version = "4.0.0", default-features = false }
+pallet-scheduler = { version = "4.0.0", default-features = false }
+pallet-session = { version = "4.0.0", default-features = false }
+pallet-timestamp = { version = "4.0.0", default-features = false }
+pallet-transaction-payment = { version = "4.0.0", default-features = false }
+pallet-transaction-payment-rpc-runtime-api = { version = "4.0.0", default-features = false }
+pallet-utility = { version = "4.0.0", default-features = false }
+pallet-roracle = { path = "pallets/roracle", default-features = false }
+
+# Polkadot
+polkadot-core-primitives = { version = "1.0.0", default-features = false }
+polkadot-parachain = { version = "1.0.0", default-features = false }
+cumulus-client-cli = { version = "1.0.0", default-features = false }
+cumulus-client-collator = { version = "1.0.0", default-features = false }
+cumulus-client-consensus-aura = { version = "1.0.0", default-features = false }
+cumulus-client-consensus-common = { version = "1.0.0", default-features = false }
+cumulus-client-network = { version = "1.0.0", default-features = false }
+cumulus-client-parachain-consensus = { version = "1.0.0", default-features = false }
+cumulus-client-relay-chain-inprocess-interface = { version = "1.0.0", default-features = false }
+cumulus-primitives-core = { version = "1.0.0", default-features = false }
+cumulus-primitives-parachain-inherent = { version = "1.0.0", default-features = false }
+cumulus-primitives-utility = { version = "1.0.0", default-features = false }
+
+# Frontier
+fp-rpc = { version = "1.0.0", default-features = false }
+fp-evm = { version = "1.0.0", default-features = false }
+
+# ORML
+orml-tokens = { version = "0.4.0-dev", default-features = false }
+
+# Frontier
+pallet-evm = { version = "1.0.0", default-features = false }
+pallet-ethereum = { version = "1.0.0", default-features = false }
+pallet-dynamic-fee = { version = "1.0.0", default-features = false }
+
+# Frontier precompiles
+pallet-evm-precompile-simple = { version = "1.0.0", default-features = false }
+pallet-evm-precompile-modexp = { version = "1.0.0", default-features = false }
+pallet-evm-precompile-sha3fips = { version = "1.0.0", default-features = false }
+pallet-evm-precompile-dispatch = { version = "1.0.0", default-features = false }
+pallet-evm-precompile-bn128 = { version = "1.0.0", default-features = false }
+pallet-evm-precompile-blake2 = { version = "1.0.0", default-features = false }
+pallet-evm-precompile-ed25519 = { version = "1.0.0", default-features = false }
+
+# Substrate
+frame-benchmarking = { version = "4.0.0", default-features = false, optional = true }
+frame-support = { version = "4.0.0", default-features = false }
+frame-system = { version = "4.0.0", default-features = false }
+frame-system-benchmarking = { version = "4.0.0", default-features = false, optional = true }
+frame-system-rpc-runtime-api = { version = "4.0.0", default-features = false }
+frame-try-runtime = { version = "4.0.0", default-features = false, optional = true }
+
+# Polkadot
+polkadot-client-service = { version = "1.0.0", default-features = false }
+polkadot-cli = { version = "1.0.0", default-features = false }
+polkadot-network-bridge = { version = "1.0.0", default-features = false }
+polkadot-node-core-approval-voting = { version = "1.0.0", default-features = false }
+polkadot-node-core-av-store = { version = "1.0.0", default-features = false }
+polkadot-node-core-backing = { version = "1.0.0", default-features = false }
+polkadot-node-core-bitfield-signing = { version = "1.0.0", default-features = false }
+polkadot-node-core-bitfield-store = { version = "1.0.0", default-features = false }
+polkadot-node-core-chain-selection = { version = "1.0.0", default-features = false }
+polkadot-node-core-dispute-coordinator = { version = "1.0.0", default-features = false }
+polkadot-node-core-dispute-distribution = { version = "1.0.0", default-features = false }
+polkadot-node-core-provisioner = { version = "1.0.0", default-features = false }
+polkadot-node-core-runtime-api = { version = "1.0.0", default-features = false }
+polkadot-node-networking = { version = "1.0.0", default-features = false }
+polkadot-node-overseer = { version = "1.0.0", default-features = false }
+polkadot-node-primitives = { version = "1.0.0", default-features = false }
+polkadot-node-subsystem = { version = "1.0.0", default-features = false }
+polkadot-node-subsystem-util = { version = "1.0.0", default-features = false }
+polkadot-overseer = { version = "1.0.0", default-features = false }
+polkadot-parachain-primitives = { version = "1.0.0", default-features = false }
+polkadot-primitives = { version = "1.0.0", default-features = false }
+polkadot-runtime-common = { version = "1.0.0", default-features = false }
+polkadot-service = { version = "1.0.0", default-features = false }
+xcm = { version = "1.0.0", default-features = false }
+xcm-executor = { version = "1.0.0", default-features = false }
+xcm-builder = { version = "1.0.0", default-features = false }
+xcm-v3 = { version = "1.0.0", default-features = false }
+
+# Substrate
+sc-api = { version = "4.0.0", default-features = false }
+sc-block-builder = { version = "4.0.0", default-features = false }
+sc-client-api = { version = "4.0.0", default-features = false }
+sc-client-db = { version = "4.0.0", default-features = false }
+sc-consensus-aura = { version = "4.0.0", default-features = false }
+sc-consensus-manual-seal = { version = "4.0.0", default-features = false }
+sc-executor = { version = "4.0.0", default-features = false }
+sc-network = { version = "4.0.0", default-features = false }
+sc-offchain = { version = "4.0.0", default-features = false }
+sc-service = { version = "4.0.0", default-features = false }
+sc-telemetry = { version = "4.0.0", default-features = false }
+sc-transaction-pool = { version = "4.0.0", default-features = false }
+sc-cli = { version = "4.0.0", default-features = false }
+sc-consensus = { version = "4.0.0", default-features = false }
+sc-finality-grandpa = { version = "4.0.0", default-features = false }
+sc-keystore = { version = "4.0.0", default-features = false }
+sc-sync-state-rpc = { version = "4.0.0", default-features = false }
+substrate-frame-rpc-system = { version = "4.0.0", default-features = false }
+substrate-wasm-builder = { version = "4.0.0", default-features = false }
+
+[profile.release]
+panic = "unwind"
+overflow-checks = true
+lto = "thin"
+codegen-units = 1
+strip = "symbols"
+
+[profile.release-with-debug]
+inherits = "release"
+debug = true
+
