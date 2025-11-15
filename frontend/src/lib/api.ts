@@ -2,8 +2,9 @@ import { ApiPromise, WsProvider } from '@polkadot/api';
 import { types } from './types';
 
 // RPC endpoints with failover
-const PRIMARY_RPC = process.env.NEXT_PUBLIC_PRIMARY_RPC || 'wss://rpc.polkadot.io';
-const FALLBACK_RPC = process.env.NEXT_PUBLIC_FALLBACK_RPC || 'wss://rpc.ibp.network/polkadot';
+// Default to local development chain, override with environment variables for production
+const PRIMARY_RPC = process.env.NEXT_PUBLIC_PRIMARY_RPC || 'ws://127.0.0.1:9944';
+const FALLBACK_RPC = process.env.NEXT_PUBLIC_FALLBACK_RPC || 'wss://rpc.polkadot.io';
 
 let api: ApiPromise | null = null;
 let currentProvider: WsProvider | null = null;
